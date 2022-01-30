@@ -9,6 +9,10 @@ body{
   width: 100%;
   perspective: 600px;
   background-color: rgb(236, 10, 85);
+  /*transform:scale(3);
+  transform-origin: 90% 10% 0px;*/
+  transition-duration: 2s;
+  
 }
 #frontwall{
   position: relative;
@@ -104,11 +108,123 @@ body{
   background-size: 100% 100%;
 }
 #desktopscr{
+  display: flex;
   position: absolute;
   height: 64%;
   width: 89%;
   right:8%;
   top:3%;
   background-color: black;
-  background-size: 100% 100%; 
+  background-size: 100% 100%;
+  justify-content: center;
+  align-items: center;
+}
+#desktopscr img{
+  height: 20px;
+  width: 20px;
+  opacity: 0;
+  transition-duration: 2s;
+}
+#desktopscr:hover img{
+  opacity: 1;
+}
+
+
+/* book design */
+.scene{
+  position: absolute;
+  height: 20rem;
+  width: 20rem;
+  perspective: 100rem;
+  top:10rem;
+  left: 40rem;
+  border: 1px solid black;
+}
+/*
+.b1{
+  transform: translateZ(-1400px);
+  top:-39rem;
+  left:90rem;
+  animation-duration: 2s;
+  background-color: red;
+}*/
+.books{
+  height: 20rem;
+  width: 15rem;
+  background-color: rgba(120, 109, 9, 0);
+  transform-style: preserve-3d;
+  transform: rotate3d(0,1,0,85deg);
+  transition-duration: 1s;
+}
+.bookface{
+  position: absolute;
+  height: 20rem;
+  width: 15rem;
+}
+.frontcover{
+  z-index:999;
+  background-color: rgba(7, 165, 105,1);
+  transform-origin: left;
+  transition-duration: 2s;
+  transform: translate3d(0,0,0.7rem);
+}
+.leftside,.rightside{
+  display: flex;
+  height: 1.4rem;
+  width: 20rem;
+  left: -10rem;
+  justify-content: center;
+  letter-spacing: 0.3rem;
+  top:9.3rem;
+  background-color: rgb(240, 12, 126);
+  transform: rotateZ(90deg) rotateX(-90deg);
+}
+.rightside{
+  background-color: rgb(250, 248, 252);
+  width: 19.7rem;
+  top:9.4rem;
+  left: 4.5rem;
+}
+.backcover{
+  background-color: rgba(59, 38, 97,1);
+  transform: rotateY(180deg) translateZ(0.7rem);
+}
+.bottomside,.topside{
+  height: 1.3rem;
+  width: 14.5rem;
+  left: 0rem;
+  top:19.3rem;
+  transform: rotateX(-90deg);
+  background-color: rgb(255, 255, 255);
+}
+.topside{
+  top:-0.5rem;
+  transform: rotateX(90deg);
+}
+.books:hover{
+  transform: rotateY(85deg) rotateZ(-20deg) translateX(-100px);
+}
+/*.b1:hover{
+  transform: translateZ(100px);
+  top:10rem;
+  left: 40rem;
+}*/
+
+#test{
+  position: absolute;
+  top:10rem;
+  left: 10rem;
+  height: 2rem;
+  width: 20rem;
+  transform:rotateZ(90deg);
+  background-color: blue;
+}
+
+@keyframes zoombook {
+  from {top:-39rem;left:90rem;transform: translateZ(-1400px);}
+  to {top:10rem;left: 40rem;transform: translateZ(0px);}
+}
+
+@keyframes openbook {
+  
 }
