@@ -1,4 +1,8 @@
 $(document).ready(function(){
+    var screen_height = $(window).height();
+    var screen_width = $(window).width();
+    $("body").css({"min-height":screen_height,"min-width":screen_width});
+    
     $("#room #desktopscr").click(function(e){
         $("#room").css({"transform":"scale(5)","transform-origin":"53% 41% 0px"});
         e.stopPropagation();
