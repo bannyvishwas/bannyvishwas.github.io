@@ -12,8 +12,8 @@ body{
   perspective: 600px;
   background-color: rgb(236, 10, 85);
   transition-duration: 2s;
-  transform: scale(3);
-  transform-origin: 90% 10% 0px;
+  /*transform: scale(3);
+  transform-origin: 90% 10% 0px;*/
   
 }
 #frontwall{
@@ -163,14 +163,14 @@ body{
 .frontcover{
   transform: translateZ(0.95rem);
   background-color: rgb(70, 67, 67);
-  background-image: url("./../assests/book.png");
-  background-size: cover;
+  background-image: url("./../assests/front-cover.png");
+  background-size: 100% 100%;
 }
 .backcover{
   transform: rotateY(180deg) translateZ(0.3rem);
   background-color: rgb(64, 68, 65);
-  background-image: url("./../assests/book.png");
-  background-size: cover;
+  background-image: url("./../assests/back-cover.png");
+  background-size: 100% 100%;
 }
 .leftside{
   transform: rotateY(-90deg) translate3d(0.3rem,0,0.65rem);
@@ -179,8 +179,8 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("./../assests/book.png");
-  background-size: cover;
+  background-image: url("./../assests/left-cover.png");
+  background-size: 100% 100%;
 }
 .rightside{
   transform: rotateY(90deg) translate3d(-0.3rem,0,2.1rem);
@@ -200,9 +200,6 @@ body{
   height: 23%;
   width: 96%;
 }
-.books:hover{
-  transform: rotateY(90deg) rotateZ(-30deg) translateX(-1.5rem);
-}
 .b1{
   z-index:10;
   position: absolute;
@@ -221,8 +218,20 @@ body{
 .books .book-title{
   white-space: nowrap;
   transform: rotateZ(90deg);
-  color: rgb(155, 132, 4);
+  color: rgb(204, 175, 8);
   font-weight: bold;
+  font-size: 0.4rem;
+}
+.hoverbook:hover{
+  transform: rotateY(90deg) rotateZ(-30deg) translateX(-1.5rem);
+}
+
+.setZIndex{
+  z-index: 999;
+}
+
+.selectbook{
+  transform: rotateY(0deg) translate3d(0rem,1rem,6rem);
 }
 @keyframes zoombook {
   from {top:-39rem;left:90rem;transform: translateZ(-1400px);}
