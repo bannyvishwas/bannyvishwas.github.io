@@ -141,6 +141,9 @@ body{
   width:16.8vw;
   height:12.24vh;
 }
+.br2{
+  top:19vh;
+}
 .scene{
   height: 11.628vh;
   width: 1.68vw;
@@ -148,6 +151,7 @@ body{
   margin-top: 0.489vh;
   transition-duration: 0.5s;
 }
+
 .books{
   height: 11.628vh;
   width: 3.36vw;
@@ -155,6 +159,7 @@ body{
   transform-style: preserve-3d;
   transform: rotateY(90deg);
   transition-duration: 0.5s;
+  cursor: pointer;
 }
 .bookface{
   position: absolute;
@@ -164,13 +169,16 @@ body{
 }
 .frontcover{
   transform: translateZ(2.3vh);
-  background-color: rgb(70, 67, 67);
   background-image: url("./../assests/front-cover.png");
+  background-color: white;
   background-size: 100% 100%;
+  transform-origin: 0% 0% 0px;
+  transition-duration: 2s;
+  color: white;
+  opacity: 1;
 }
 .backcover{
   transform: rotateY(180deg) translateZ(0.8vh);
-  background-color: rgb(64, 68, 65);
   background-image: url("./../assests/back-cover.png");
   background-size: 100% 100%;
 }
@@ -231,10 +239,37 @@ body{
 }
 
 .setZIndex{
-  z-index: 999;
-  left:40%;
+  z-index: 100;
+  left:70%;
+}
+.br2 .setZIndex{
+  top:-130%;
 }
 
 .selectbook{
   transform: rotateY(0deg) translate3d(0vw,1.5vw,15vh);
+}
+
+
+.page{
+  z-index:90;
+  transform: translateZ(2.2vh);
+  transform-origin:0% 0% 0px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0.5vw 0vh 1vw -0.1vw rgb(104, 101, 101) inset;
+  transition-duration: 1s;
+}
+.lastpg{
+  z-index:60;
+}
+.turnleft{
+  transform : rotateY(-179deg) translateZ(-2.2vh);
+}
+.turnpageleft{
+  transform : rotateY(-179deg) translateZ(-2.3vh);
+}
+.pgcontent{
+  opacity: 1;
+  transition-delay: 0.3s;
+  transition-duration: 0.5s;
 }
