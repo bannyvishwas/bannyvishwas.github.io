@@ -268,8 +268,31 @@ body{
 .turnpageleft{
   transform : rotateY(-179deg) translateZ(-2.3vh);
 }
+
+/* Design Page Content*/
 .pgcontent{
+  height: 100%;
+  width: 100%;
   opacity: 1;
   transition-delay: 0.3s;
   transition-duration: 0.5s;
+  font-size: 0.3vh;
+  text-align: center;
+  margin-top: 20%;
+}
+.pgcontent img{
+  height: 30%;
+  width:50%;
+  border-radius: 50%;
+  margin: 30% 25%;
+  margin-bottom: 5%;
+  background-color: white;
+}
+.pgcontent span{
+  font-size: 0.4vh;
+  font-weight: bold;
+}
+.pgcontent p{
+  text-align: justify;
+  padding:3% 3%;
 }
