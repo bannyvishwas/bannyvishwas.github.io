@@ -13,8 +13,8 @@ body{
   background-color: rgb(236, 10, 85);
   transition-duration: 2s;
   overflow: hidden;
-  transform: scale(3);
-  transform-origin: 90% 10% 0px;
+  /*transform: scale(3);
+  transform-origin: 90% 10% 0px;*/
   
 }
 #frontwall{
@@ -281,12 +281,10 @@ body{
   margin-top: 20%;
 }
 .pgcontent img{
-  height: 30%;
-  width:50%;
-  border-radius: 50%;
-  margin: 30% 25%;
-  margin-bottom: 5%;
-  background-color: white;
+  height:15%;
+  border-radius:0%;
+  width:25%;
+  margin:10% 0%;
 }
 .pgcontent span{
   font-size: 0.4vh;
