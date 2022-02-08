@@ -3,7 +3,7 @@ body{
   width:100vw;
   height:100vh;
   overflow: hidden;
-  background-color: cadetblue;
+  background-color: rgb(216, 232, 240);
 }
 #room{
   position: relative;
@@ -69,6 +69,15 @@ body{
   background-image: url('../assests/kak2.png');
   background-size: 100% 100%;
 }
+#rubiccube{
+  position: absolute;
+  height: 7vh;
+  width: 3vw;
+  right: 3vw;
+  bottom: 23vh;
+  background-image: url('../assests/cube.png');
+  background-size: 100% 100%;
+}
 
 #window{
   position: absolute;
@@ -77,9 +86,48 @@ body{
   height:40vh;
   width: 24vw;
   box-shadow: 0 0px 10px 5px rgb(184, 94, 18);
+}
+#windowframe,#windowview{
+  position: absolute;
+  right:0vw;
+  top: 0vh;
+  height:40vh;
+  width: 24vw;
+  overflow: hidden;
+}
+#windowview{
+  background-color: rgb(216, 232, 240);
+  background-image: url("../assests/mountains.png");
+  background-size: cover;
+}
+#windowframe{
   background-image: url('../assests/window.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
+}
+
+#achievement{
+  height:40vh;
+  width: 20vw;
+  position: absolute;
+  top:8vh;
+  left:2vw;
+  cursor: pointer;
+}
+.frame{
+  position: absolute;
+  top: 0vh;
+  left:0vw;
+  height:15vh;
+  width:5.5vw;
+  background-color: white;
+  background-image: url("../assests/frame.png");
+  background-size: 100% 100%;
+}
+.frame img{
+  height:13.2vh;
+  width:4.7vw;
+  padding: 0.9vh 0.4vw;
 }
 
 #table{
@@ -90,6 +138,54 @@ body{
   bottom:10vh;
   background-image: url('../assests/table2.png');
   background-size: 40vw 40vh;
+}
+#chair{
+  height: 55vh;
+  width: 20vw;
+  background-image: url("../assests/chair3.png");
+  background-size: 100% 100%;
+  position: absolute;
+  top:47vh;
+  left:30vw;
+}
+#football{
+  height:100px;
+  width:100px;
+  position: absolute;
+  bottom:8vh;
+  right:8vw;
+  background-image: url("../assests/f1.png");
+  background-size: 100% 100%;
+  animation: rotateF,moveF infinite;
+  animation-direction: alternate;
+  animation-duration: 4s;
+  animation-play-state: paused;
+  cursor: pointer;
+}
+@keyframes rotateF{
+  0% {
+    transform: rotateZ(0deg);
+  }
+  50%{
+    transform: rotateZ(-360deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+@keyframes moveF{
+  0% {
+    transform: translateX(0vw) rotateZ(0deg);
+  }
+  50%{
+    transform: translateX(-20vw) rotateZ(-360deg);
+  }
+  100% {
+    transform: translateX(0vw) rotateZ(0deg);
+  }
+}
+#football:hover{
+  animation-play-state: running;
 }
 
 #lamp{
@@ -418,3 +514,112 @@ body{
   margin-top: 0%;
   line-height: 0.5vh;
 }
+
+/* Design Rubic Cube */
+.rubic {
+  position: absolute;
+  bottom: 24vh;
+  right:3vw;
+  width: 30px;
+  height: 30px;
+  perspective: 300px;
+  }
+
+  .cube {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition-duration: 3s;
+  transform: rotateY(30deg);
+  cursor: pointer;
+  }
+
+  .cubeface {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+  }
+  .frontface  { transform: rotateY(  0deg) translateZ(15px); background-color: red;}
+  .rightface  { transform: rotateY( 90deg) translateZ(15px); background-color: blue;}
+  .backface   { transform: rotateY(180deg) translateZ(15px); background-color: green;}
+  .leftface   { transform: rotateY(-90deg) translateZ(15px); background-color: yellow;}
+  .topface    { transform: rotateX( 90deg) translateZ(15px); background-color: white;}
+  .bottomface { transform: rotateX(-90deg) translateZ(15px); background-color: orange;}
+
+  .cube:hover{
+      transform: rotateY(360deg) translateY(-5vh);
+  }
+  .hline{
+      position: absolute;
+      height:2px;
+      width:100%;
+      background-color: black;
+  }
+  .vline{
+      position: absolute;
+      height:100%;
+      width:2px;
+      background-color: black;
+  }
+
+  /* Animating Widndow */
+  .cloud{
+    position: absolute;
+    height:10vh;
+    width: 10vw;
+    top:10vh;
+    left:-10vw;
+    background-image: url("../assests/cloud1.png");
+    background-size: 100% 100%;
+    animation:cloudmove 20s linear infinite;
+    animation-direction: alternate;
+  }
+  .c1{
+    height:10vh;
+    width: 10vw;
+    top:10vh;
+  }
+  .c2{
+    height:10vh;
+    width: 10vw;
+    top:10vh;
+  }
+  .c3{
+    height:10vh;
+    width: 10vw;
+    top:10vh;
+  }
+
+  @keyframes cloudmove{
+    0%{
+      left:-10vw;
+    }
+    100%{
+      left:24vw;
+    }
+  }
+  .bird{
+    position: absolute;
+    height:10vh;
+    width: 10vw;
+    left:-10vh;
+    top:10vh;
+    background-size: 100% 100%;
+    transition-duration: 0s;
+  }
+  #bluebird{
+    background-image: url("../assests/flying-bird-blue.gif");
+  }
+  #redbird{
+    background-image: url("../assests/flying-bird.gif");
+  }
+  #yellowbird{
+    background-image: url("../assests/yellow-bird.gif");
+  }
+
+  .dirright{
+    left:24vw;
+    transition-duration: 10s;
+  }

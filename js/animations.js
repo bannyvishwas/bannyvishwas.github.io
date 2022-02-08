@@ -3,6 +3,7 @@ let currentActive = "no-book";
 let book_opened = false;
 let pagesOnLeft = [];
 let pwd="";
+var birdlist = ["flying-bird-blue.gif","flying-bird.gif","yellow-bird.gif"]
 
 
  // Change Scale to 1 before refreshing
@@ -15,6 +16,18 @@ $(document).ready(function(){
     var screen_width = $(window).width();
     $("body").css({"min-height":screen_height,"min-width":screen_width});
     */
+
+    //Zoom Photos
+    $("#achievement").click(function(e){
+        $("#room").css({"transform":"scale(2.5)","transform-origin":"0% 10% 0px"});
+        e.stopPropagation();
+    });
+
+    //Zoom window
+    $("#window").click(function(e){
+        $("#room").css({"transform":"scale(2.3)","transform-origin":"40% 10% 0px"});
+        e.stopPropagation();
+    });
 
     // Zoom Desktop
     $("#room #desktopscr").click(function(e){
@@ -166,5 +179,51 @@ $(document).ready(function(){
         e.stopPropagation();
     });
 
-    /*setInterval(function(){alert("hello");}, 3000);*/
+    setInterval(function(){
+        //Bird animation
+        //var getbird = "../assests/"+birdlist[parseInt(Math.random()*(birdlist.length))]
+        var birdtype = parseInt(Math.random()*10);
+        var birdsize =  parseInt(Math.random()*15);
+        var flydir =  parseInt(Math.random()*10);
+        var toph =  parseInt(Math.random()*15);
+        if(birdtype < 3){
+            $("#bluebird").removeClass("dirright");
+            $("#yellowbird").removeClass("dirright");
+            $("#redbird").css({"height":birdsize+"vh","width":birdsize+"vw","top":toph+"vh"});
+            $("#redbird").addClass("dirright");
+        }else if(birdtype < 6){
+            $("#redbird").removeClass("dirright");
+            $("#yellowbird").removeClass("dirright");
+            $("#bluebird").css({"height":birdsize+"vh","width":birdsize+"vw","top":toph+"vh"});
+            $("#bluebird").addClass("dirright");
+        }else{
+            $("#redbird").removeClass("dirright");
+            $("#bluebird").removeClass("dirright");
+            $("#yellowbird").css({"height":birdsize+"vh","width":birdsize+"vw","top":toph+"vh"});
+            $("#yellowbird").addClass("dirright");
+        }
+    }, 11000);
+
+    // Shape Clouds Randomly
+    var c1 = parseInt(Math.random()*15);
+    var c1t = parseInt(Math.random()*15);
+
+    var c2 = parseInt(Math.random()*15);
+    var c2t = parseInt(Math.random()*15);
+
+    var c3 = parseInt(Math.random()*15);
+    var c3t = parseInt(Math.random()*15);
+
+    var clouddir = parseInt(Math.random()*10);
+
+    $(".c1").css({"height":c1+"vh","width":c1+"vw","top":c1t+"vh"});
+    $(".c2").css({"height":c2+"vh","width":c2+"vw","top":c2t+"vh"});
+    $(".c3").css({"height":c3+"vh","width":c3+"vw","top":c3t+"vh"});
+
+    if(clouddir > 5){
+        $(".cloud").css({"animation-direction":"reverse"});
+    }else{
+        $(".cloud").css({"animation-direction":"normal"});
+    }
+
   });
