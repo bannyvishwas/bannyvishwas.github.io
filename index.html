@@ -3,13 +3,12 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Binary Creature</title>
+    <script src="js/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/a73aca50ad.js" crossorigin="anonymous"></script>
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/min-styles.css">
-    <script src="js/jquery.min.js"></script>
-    <!--<script src="https://kit.fontawesome.com/a73aca50ad.js" crossorigin="anonymous"></script>-->
-    <script src="js/fa-icons.js"></script>
     <script src="js/animations.js"></script>
-    
 </head>
 
 <body>
@@ -239,7 +238,40 @@
             <div id="lamp"></div>
             <div id="desktop">
                 <div id="desktopscr">
-                    <img src="assests/apple.png" />
+                    <div id="loginscr">
+                        <div class="wallpaper"></div>
+                        <div id="logins">
+                            <img src="./assests/mypic.png"/>
+                            <span>Bholanath Vishwas</span>
+                            <input type="password" value="" id="pwdfield"/>
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                            <span id="invalidmsg" style="display: none;">The password is incorrect. Try again</span>
+                        </div>
+                    </div>
+                    <div id="osdesktop">
+                        <div class="wallpaper"></div>
+                        <div id="menubar"></div>
+                        <div id="messagetext">
+                            <div id="topbar">
+                                <div class="tbtn maximize">
+                                    <i class="fa fa-window-maximize" aria-hidden="true"></i>
+                                </div>
+                                <div class="tbtn windowclose" style="cursor: pointer;">
+                                    <i class="fa fa-window-close-o" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div id="changetext"></div>
+                        </div>
+                        <div id="taskbar">
+                            <i class="fa fa-github" aria-hidden="true" style="color:rgb(27, 31, 35);" data="github"></i>
+                            <i class="fa fa-twitter" aria-hidden="true" style="color:rgb(93, 169, 221);" data="twitter"></i>
+                            <i class="fa fa-linkedin-square" aria-hidden="true" style="color:rgb(0, 119, 181);" data="linkedin"></i>
+                            <i class="fa fa-map-marker" aria-hidden="true" style="color:rgb(50, 163, 80);" data="map"></i>
+                            <i class="fa fa-envelope" aria-hidden="true" style="color:rgb(185, 58, 43);" data="email"></i>
+                            <i class="fa fa-mobile" aria-hidden="true" style="color:rgb(210, 213, 223);" data="mobile"></i>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>

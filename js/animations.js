@@ -2,6 +2,7 @@ let hoverbook = true;
 let currentActive = "no-book";
 let book_opened = false;
 let pagesOnLeft = [];
+let pwd="";
 
 
  // Change Scale to 1 before refreshing
@@ -18,6 +19,7 @@ $(document).ready(function(){
     // Zoom Desktop
     $("#room #desktopscr").click(function(e){
         $("#room").css({"transform":"scale(5)","transform-origin":"53% 41% 0px"});
+        $("#room #desktopscr #loginscr").css({"display":"block"});
         e.stopPropagation();
     });
 
@@ -106,4 +108,63 @@ $(document).ready(function(){
         e.stopPropagation();
     });
 
+    $("#pwdfield").click(function(e){
+        $("#invalidmsg").css({"display":"none"});
+        e.stopPropagation();
+    });
+
+    $("#pwdfield").keyup(function(ev){
+        pwd = this.value;
+        var keycode = (ev.keyCode ? ev.keyCode : ev.which);
+        if(keycode == 13) {
+            $(".fa-arrow-right").click();
+        }
+    });
+
+    // Desktop Animations
+    $(".fa-arrow-right").click(function(e){
+        if(pwd == "banny"){
+            $("#loginscr").css({"display":"none"});
+            $("#osdesktop").css({"display":"flex"});
+        }else{
+            $("#invalidmsg").css({"display":"block"});
+        }
+        e.stopPropagation();
+    });
+
+    //Open Application
+    $("#taskbar i").click(function(e){
+        var appname = $(this).attr("data");
+        var class_name = $(this).attr("class");
+        var innerM = "";
+        if(appname == "github"){
+            innerM ='<i class="'+class_name+'" aria-hidden="true"><br><b><a href="https://github.com/bannyvishwas" target="_blank"> Open Profile </a></b><br>https://github.com/bannyvishwas</i>';
+        }else if(appname == "twitter"){
+            innerM ='<i class="'+class_name+'" aria-hidden="true"><br><b><a href="https://twitter.com/vishwasbanny" target="_blank"> Open Profile </a></b><br>https://twitter.com/vishwasbanny</i>';
+        }else if(appname == "linkedin"){
+            innerM ='<i class="'+class_name+'" aria-hidden="true"><br><b><a href="https://www.linkedin.com/in/bannyvishwas/" target="_blank"> Open Profile </a></b><br>https://www.linkedin.com/in/bannyvishwas/</i>';
+        }
+        else if(appname == "map"){
+            innerM ='<i class="'+class_name+'" aria-hidden="true"><br><b><a href="https://www.google.com/maps/place/Bijnor,+Uttar+Pradesh+246701/@29.3786329,78.10442,13z" target="_blank"> Open Google Map</a></b><br>Bijnor-246701, Uttar Pradesh (India)</i>';
+        }
+        else if(appname == "email"){
+            innerM ='<i class="'+class_name+'" aria-hidden="true"><br><b><a href="mailto:banny.swan@gmail.com" target="_blank">Write Email</a></b><br>banny.swan@gmail.com</i>';
+        }
+        else if(appname == "mobile"){
+            innerM ='<i class="'+class_name+'" aria-hidden="true"><br><b><a href="tel:+917535924371" target="_blank">Call</a></b><br>+91-7535924371</i>';
+        }else{
+
+        }
+        $("#changetext").html(innerM);
+        $("#messagetext").css({"display":"flex"});
+        e.stopPropagation();
+    });
+
+    //Close application
+    $(".windowclose").click(function(e){
+        $("#messagetext").css({"display":"none"});
+        e.stopPropagation();
+    });
+
+    /*setInterval(function(){alert("hello");}, 3000);*/
   });
