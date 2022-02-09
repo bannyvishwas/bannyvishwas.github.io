@@ -115,7 +115,7 @@ body{
     height:60%;
     bottom:20%;
     width: 60%;
-    display: block;
+    display: none;
     margin: 0 0;
     justify-content: start;
     flex-direction: column;
