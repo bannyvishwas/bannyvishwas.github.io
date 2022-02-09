@@ -1,0 +1,161 @@
+body{
+    margin: 0% 0%;
+    overflow: hidden;
+}
+#desktopscr{
+    display: flex;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    background-size: 100% 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  /*Design Desktop */
+#loginscr,#osdesktop{
+    height: 100vh;
+    width: 100vw;
+    position: inherit;
+  }
+  #loginscr{
+    display: block;
+  }
+  .wallpaper{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    background-image: url("../assests/wallpaper1.png");
+    background-size: 100% 100%;
+    filter: blur(2vh);
+  }
+  #logins{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    font-size: 3vh;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  #logins img{
+    height: 20vh;
+    width: 20vh;
+    border-radius: 50%;
+    margin-bottom: 1vh;
+    border: 0.1vh solid rgb(255, 255, 255);
+  }
+  #logins input{
+    height:5%;
+    width: 30%;
+    margin-top: 1%;
+    border: none;
+    outline: none;
+    font-size: 3vh;
+    text-align: center;
+  }
+  #logins i{
+    margin-top: 3vh;
+    font-size: 5vh;
+    border-radius: 50%;
+    color: rgb(161, 157, 157);
+    cursor: pointer;
+    font-weight: bold;
+  }
+  #logins i:hover{
+    color: white;
+  }
+  
+  #osdesktop{
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+  #osdesktop .wallpaper{
+    filter: blur(0px);
+  }
+  #menubar,#taskbar,#messagetext{
+    width:100%;
+    height:7vh;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    font-size: 5vh;
+  }
+  #taskbar{
+    width:auto;
+    border-radius: 0.2vw;
+    background-color: rgba(164, 167, 172, 0.5);
+    bottom: 3vh;
+
+  }
+  #taskbar i{
+    transition-duration: 0.2s;
+    cursor: pointer;
+    color: rgb(216, 227, 229);
+    margin: 0px 0.2vw;
+    margin-top: 0vh;
+  }
+  #menubar{
+    bottom: 97%;
+    height:3%;
+    background-color: rgb(216, 227, 229);
+    background-image: url("../assests/osdesk.png");
+    background-size: 100% 100%;
+  }
+  
+  #taskbar i:hover{
+    margin-top:-5vh;
+    text-shadow: 0vh 0.4vh white;
+  }
+  
+  #messagetext{
+    height:60%;
+    bottom:20%;
+    width: 60%;
+    display: block;
+    margin: 0 0;
+    justify-content: start;
+    flex-direction: column;
+    font-size: 5vh;
+    text-align: center;
+    background-color: rgba(215, 226, 228,0.6);
+  }
+  #messagetext i{
+    margin-top: 10%;
+    line-height: 1vh;
+  }
+  #messagetext i a{
+    text-decoration: none;
+    color: black;
+  }
+  #topbar{
+    height:5%;
+    background-color: rgba(212, 226, 244, 0.5);
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-size: 2vh;
+  }
+  #topbar .tbtn{
+    height:100%;
+    width:1.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #changetext{
+    height: 95%;
+    width:100%;
+  }
+  #changetext i{
+    line-height: 5vh;
+  }
+  #changetext iframe{
+    height:100%;
+    width:100%;
+    border:none;
+  }

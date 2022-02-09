@@ -11,11 +11,11 @@ var birdlist = ["flying-bird-blue.gif","flying-bird.gif","yellow-bird.gif"]
     $("#room").css({"transform":"scale(1)","transform-origin":"0% 0% 0px"});
 });
 $(document).ready(function(){
-   // Change Height and width of Body
-    /*var screen_height = $(window).height();
-    var screen_width = $(window).width();
-    $("body").css({"min-height":screen_height,"min-width":screen_width});
-    */
+
+    //Animate Tour
+    setTimeout(function(){
+        $("#tour").css({"display":"none"});
+    },5500);
 
     //Zoom Photos
     $("#achievement").click(function(e){

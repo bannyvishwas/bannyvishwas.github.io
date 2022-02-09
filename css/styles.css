@@ -476,6 +476,7 @@ body{
 
 #taskbar i:hover{
   margin-top:-1vh;
+  text-shadow: 0vh 0.1vh white;
 }
 
 #messagetext{
@@ -622,4 +623,32 @@ body{
   .dirright{
     left:24vw;
     transition-duration: 10s;
+  }
+
+  /* page tour */
+  #tour{
+    position: absolute;
+    background-image: radial-gradient(rgb(83, 61, 61),black,black);
+    opacity: 0;
+    bottom:2vh;
+    left:38vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 3vh;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    animation: fadeOut 5s linear;
+    padding: 1vh 1vw;
+  }
+  #tour span{
+    font-size: 2.5vh;
+  }
+
+  @keyframes fadeOut{
+    0%{opacity: 0;}
+    25%{opacity: 0.8;}
+    75%{opacity: 0.8;}
+    100%{opacity: 0;}
   }
