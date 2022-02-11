@@ -1,5 +1,48 @@
 @media screen and (max-width:720px){
-    #room{
-        background-color: red;
+    body{
+        background-image: radial-gradient(circle, rgb(251, 63, 151) 0%, rgb(252, 70, 125) 100%);
     }
+    #room{
+        display: none;
+    }
+    #tour{
+        left: 10vw;
+        font-size: 5vw;
+    }
+    #phonescreen{
+        display: block;
+    }
+    #tablephone{
+        height: 50vh;
+        width: 100vw;
+        position: absolute;
+        bottom: 0vh;
+        left:0vw;
+        background-size: 200% 100%;
+        background-position: 50% 0%;
+        background-image: url("../assests/table2.png");
+    }
+    #desktopphone{
+        height: 45vh;
+        width: 90vw;
+        position: absolute;
+        top: 10vh;
+        left:6vw;
+        background-size: 100% 100%;
+        background-image: url("../assests/desktop.png");
+    }
+    #phonedesktopscr{
+        height: 28vh;
+        position: absolute;
+        top:2vh;
+        left:2vw;
+        width: 80vw;
+        background-color: rgb(0, 0, 0);
+    }
+    #phonedesktopscr iframe{
+        height:100%;
+        width:100%;
+        border: none;
+    }
+
 }

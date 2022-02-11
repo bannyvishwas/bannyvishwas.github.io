@@ -226,4 +226,12 @@ $(document).ready(function(){
         $(".cloud").css({"animation-direction":"normal"});
     }
 
+
+    // Code for Phone Screens
+    var screenWidth = $(window).width();
+    var screenHeight = $(window).height();
+    if(screenHeight > screenWidth){
+        //Activate Mobile screen
+        $("#tour").html("Use desktop site to view the full site.");
+    }
   });

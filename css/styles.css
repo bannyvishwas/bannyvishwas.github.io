@@ -5,6 +5,9 @@ body{
   overflow: hidden;
   background-color: rgb(216, 232, 240);
 }
+#phonescreen{
+  display: none;
+}
 #room{
   position: relative;
   height: 100vh;
