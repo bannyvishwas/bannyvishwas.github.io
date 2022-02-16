@@ -20,18 +20,20 @@ $(document).ready(function(){
 
   // For Delete and Backspace
   $(document).keydown(function(e) {
-    if(e.keyCode == 8 || e.keyCode == 46){
-      if(activeItem !=0 ){
-        activeItem = activeItem - 1
-        answer = answer.substring(0,(answer.length-1));
+    if(correct == false){
+      if(e.keyCode == 8 || e.keyCode == 46){
+        if(activeItem !=0 ){
+          activeItem = activeItem - 1
+          answer = answer.substring(0,(answer.length-1));
+        }
+        $("#grid").find(".row").eq(activeRow).find(".items").eq(activeItem).text("");
       }
-      $("#grid").find(".row").eq(activeRow).find(".items").eq(activeItem).text("");
     }
   });
-  
+
     // hard keyboard press
     $(document).keypress(function(e) {
-      if(activeItem<=5){
+      if(activeItem<=5 && correct == false){
         var kcode = e.keyCode;
         if(kcode >= 97 && kcode <= 122){
           var vl = String.fromCharCode(kcode);
@@ -61,7 +63,7 @@ $(document).ready(function(){
     // Button press
     $("#keyboard button").click(function(){
       var btntxt = $(this).text();
-      if(activeItem<=5){
+      if(activeItem<=5 && correct == false){
         if(btntxt != "Enter" && btntxt != "Back"){
           $("#grid").find(".row").eq(activeRow).find(".items").eq(activeItem).text(btntxt);
           if(activeItem<5){
