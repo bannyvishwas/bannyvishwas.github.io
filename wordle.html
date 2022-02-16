@@ -1,0 +1,168 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle</title>
+    <script src="js/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/a73aca50ad.js" crossorigin="anonymous"></script>
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+    <link rel="stylesheet" href="css/wordle-styles.css">
+    <script>
+            $.get("js/words.txt",function(data){
+            $("#allwords").text(data);
+        });
+    </script>
+</head>
+
+<body>
+    <div id="topbar">Wordle</div>
+    <div id="wordle">
+        <div id="grid">
+            <div class="row">
+                <div class="items"></div>
+                <div class="items"></div>
+                <div class="items"></div>
+                <div class="items"></div>
+                <div class="items"></div>
+            </div>
+            <div class="row">
+                <div class="items"></div>
+                <div class="items"></div>
+                <div class="items"></div>
+                <div class="items"></div>
+                <div class="items"></div>
+            </div>
+            <div class="row">
+                <div class="items"></div>
+                <div class="items"></div>
+                <div class="items"></div>
+                <div class="items"></div>
+                <div class="items"></div>
+            </div>
+            <div class="row">
+                <div class="items"></div>
+                <div class="items"></div>
+                <div class="items"></div>
+                <div class="items"></div>
+                <div class="items"></div>
+            </div>
+            <div class="row">
+                <div class="items"></div>
+                <div class="items"></div>
+                <div class="items"></div>
+                <div class="items"></div>
+                <div class="items"></div>
+            </div>
+            <div class="row">
+                <div class="items"></div>
+                <div class="items"></div>
+                <div class="items"></div>
+                <div class="items"></div>
+                <div class="items"></div>
+            </div>
+        </div>
+        <div id="keyboard">
+            <div class="row">
+                <button type="button">Q</button>
+                <button type="button">W</button>
+                <button type="button">E</button>
+                <button type="button">R</button>
+                <button type="button">T</button>
+                <button type="button">Y</button>
+                <button type="button">U</button>
+                <button type="button">I</button>
+                <button type="button">O</button>
+                <button type="button">P</button>
+            </div>
+            <div class="row">
+                <button type="button">A</button>
+                <button type="button">S</button>
+                <button type="button">D</button>
+                <button type="button">F</button>
+                <button type="button">G</button>
+                <button type="button">H</button>
+                <button type="button">J</button>
+                <button type="button">K</button>
+                <button type="button">L</button>
+            </div>
+            <div class="row">
+                <button type="button" class="enterbtn">Enter</button>
+                <button type="button">Z</button>
+                <button type="button">X</button>
+                <button type="button">C</button>
+                <button type="button">V</button>
+                <button type="button">B</button>
+                <button type="button">N</button>
+                <button type="button">M</button>
+                <button type="button" class="backbtn">Back</button>
+            </div>
+        </div>
+    </div>
+    <div id="popup">
+        <div class="window">
+            <div class="wintitle">Instructions
+                <div id="close">X</div>
+            </div>
+            <div class="section" style="text-align: center;">
+                <p>Credit : <a href="https://github.com/bannyvishwas" target="_blank">Banny Vishwas</a></p>
+                <p>Inspired by <a href="https://www.nytimes.com/games/wordle/index.html" target="_blank">The New York Times</a></p>
+            </div>
+            <div class="section">
+                <p>Guess the <span style="font-weight: bold;">WORDLE</span> in Six tries.</p>
+                <p>Each Guess must be a valid five-letter word. Hit the <b>Enter</b> button to submit.</p>
+                <p>After each Guess, the color of the tiles will change to show how close your guess was to the word.</p>
+            </div>
+            <div class="section" style="text-align: center;">
+                <p><b>Example</b></p>
+                <div class="row">
+                    <div class="items greencard">A</div>
+                    <div class="items">B</div>
+                    <div class="items">O</div>
+                    <div class="items">V</div>
+                    <div class="items">E</div>
+                </div>
+                <p>The letter <b>A</b> is in the word and in correct position.</p>
+                <div class="row">
+                    <div class="items">E</div>
+                    <div class="items">X</div>
+                    <div class="items yellowcard">I</div>
+                    <div class="items">S</div>
+                    <div class="items">T</div>
+                </div>
+                <p>The letter <b>I</b> is in the word but in wrong position.</p>
+                <div class="row">
+                    <div class="items">H</div>
+                    <div class="items">O</div>
+                    <div class="items">U</div>
+                    <div class="items graycard">S</div>
+                    <div class="items">E</div>
+                </div>
+                <p>The letter <b>S</b> is not in the word in any spot.</p>
+            </div>
+        </div>
+    </div>
+    <div id="scores" style="display: none;">
+        <div class="window">
+            <div class="wintitle">Score Board</div>
+            <div class="section" style="text-align: center;">
+                <p id="oops"><b>Oops! It was</b></p>
+                <div class="row">
+                    <div class="items greencard">?</div>
+                    <div class="items greencard">?</div>
+                    <div class="items greencard">?</div>
+                    <div class="items greencard">?</div>
+                    <div class="items greencard">?</div>
+                </div>
+                <p id="scoretxt">Score : <b>0/0</b></p>
+                <div class="row">
+                    <button type="button" id="nextbtn">Try Next</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div id="allwords" style="display: none;"></div>
+</body>
+<script src="js/wordle.js"></script>
+</html>

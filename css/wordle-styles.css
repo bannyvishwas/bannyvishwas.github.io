@@ -1,0 +1,138 @@
+body{
+    margin: 0% 0%;
+    padding: 0% 0%;
+    font-weight: bold;
+    font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+#topbar{
+  height:7%;
+  width: 100%;
+  background-color: rgb(141, 138, 138);
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+#wordle{
+  width: 100%;
+  height:92%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 0.4rem;
+  flex: 1;
+}
+#grid,#keyboard{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.3rem;
+}
+.row{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  column-gap: 0.3rem;
+}
+.items{
+  height:4rem;
+  width:4rem;
+  border: 2px solid rgb(211, 214, 218);
+  flex-shrink: 1;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  text-transform: uppercase;
+  transition-duration: 1s;
+}
+button{
+  height: 3rem;
+  border: none;
+  width: 3rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  flex-shrink: 1;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.greencard{
+  background-color: rgb(106, 170, 100);
+  color: white;
+}
+
+.yellowcard{
+  background-color: rgb(201, 180, 88);
+  color: white;
+}
+.graycard{
+  background-color: rgb(120, 124, 126);
+  color: white;
+}
+
+@keyframes cards{
+  0%{transform: rotateX(0deg);}
+  50%{transform: rotateX(89deg);}
+  100%{transform: rotateX(0deg);}
+}
+
+/* Instruction Popup */
+#popup,#scores{
+  position: absolute;
+  width:100%;
+  height:100%;
+  top:0%;
+  left: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(12,12,12,0.3);
+  font-size: 1rem;
+  font-weight: normal;
+}
+.window{
+  width:30rem;
+  background-color: white;
+  flex-shrink: 1;
+}
+.wintitle{
+  width: 100%;
+  height:2rem;
+  background-color: rgb(141, 138, 138);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:white;
+  position: relative;
+}
+.section{
+  width: 98%;
+  padding: 1% 1%;
+  border-bottom: 1px solid rgb(141, 138, 138);
+}
+.section .items{
+  height:3rem;
+  width: 3rem; 
+}
+#close{
+  position: absolute;
+  top: 10%;
+  right: 1%;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.section button{
+  width: 50%;
+  cursor: pointer;
+}
+.section a{
+  outline: none;
+  text-decoration: none;
+}
+
