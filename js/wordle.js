@@ -9,7 +9,7 @@ var scores = [0,0];
 $(document).ready(function(){
   setTimeout(function(){
     var tempWord = $("#allwords").text();
-    wordlist = tempWord.split("\r\n");
+    wordlist = tempWord.split("$");
     startProcess();
   },2000);
   
