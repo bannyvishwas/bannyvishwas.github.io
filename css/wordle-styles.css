@@ -65,15 +65,18 @@ button{
 .greencard{
   background-color: rgb(106, 170, 100);
   color: white;
+  animation: cards 1s forwards;
 }
 
 .yellowcard{
   background-color: rgb(201, 180, 88);
   color: white;
+  animation: cards 1s forwards;
 }
 .graycard{
   background-color: rgb(120, 124, 126);
   color: white;
+  animation: cards 1s forwards;
 }
 
 @keyframes cards{

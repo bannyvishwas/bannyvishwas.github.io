@@ -130,16 +130,19 @@ function checkAnswer(){
       // Convert to gray
       $("#grid").find(".row").eq(tempRow).find(".items").eq(i).addClass("graycard");
     }
-    $("#grid").find(".row").eq(tempRow).find(".items").eq(i).css({"animation": "cards 1s"});
   }
   answer = "";
   if(count == 5){
     correct = true;
     // Show Score Pop up
-    showScore();
+    setTimeout(function(){
+      showScore();
+    },1500);
   }
   if(activeRow == 6){
-    showScore();
+    setTimeout(function(){
+      showScore();
+    },1500);
   }
 
 }
